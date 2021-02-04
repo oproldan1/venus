@@ -9,6 +9,7 @@ import { dynamicContext } from '../contexts/dynamicContext';
 
 function FormDropDown (props:any): JSX.Element{
   let methods: string[] = Object.keys(props.record.byMethod)
+    console.log(props.record)
     const dropDownOptions: any[] =[<Select.Option value={'ALL METHODS'} key={10000}>{'ALL METHODS'}</Select.Option>];
     for (let i = 0; i < methods.length; i++){
     dropDownOptions.push(

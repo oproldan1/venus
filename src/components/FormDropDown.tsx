@@ -18,9 +18,11 @@ function FormDropDown (props:any): JSX.Element{
   }
   const { filter, setFilter } = useContext(dynamicContext)
   
+
 	function onChange(value:string ) {
-    if (value === 'ALL METHODS' && filter[props.record.service]){
+    if (filter[props.record.service]){
       delete filter[props.record.service]
+      filter[props.record.service] = value
       setFilter(filter)
       console.log(filter)
     } else {
@@ -29,6 +31,19 @@ function FormDropDown (props:any): JSX.Element{
     console.log(filter)
     }
 	}
+
+
+	// function onChange(value:string ) {
+  //   if (value === 'ALL METHODS' && filter[props.record.service]){
+  //     delete filter[props.record.service]
+  //     setFilter(filter)
+  //     console.log(filter)
+  //   } else {
+  //   filter[props.record.service] = value
+  //   setFilter(filter)
+  //   console.log(filter)
+  //   }
+	// }
 
 	function onBlur() {
 		console.log('blur');
